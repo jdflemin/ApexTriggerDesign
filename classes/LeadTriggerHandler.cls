@@ -12,7 +12,9 @@ public class LeadTriggerHandler extends AbstractTrigger{
 		oldMap = !oldMap.isEmpty() ? (Map<Id, Lead>) oldMap: new Map<Id, Lead>();
 	}
 	
-	public override void beforeInsert() {}
+	public override void beforeInsert() {
+		// code to call domain and selector layer
+	}
 	public override void beforeUpdate() {}
 	public override void beforeDelete() {}
 	public override void afterInsert() {}
