@@ -2,25 +2,39 @@
  * Created by Justin Fleming on 5/4/2019.
  */
 
-public abstract class AbstractTrigger {
+public virtual class VirtualTrigger {
 
 	public List<SObject> triggerNew;
 	public List<SObject> triggerOld;
 	public Map<Id, SObject> newMap;
 	public Map<Id, SObject> oldMap;
 	
-	public AbstractTrigger(System.TriggerOperation triggerOperation) {
+	public VirtualTrigger(System.TriggerOperation triggerOperation) {
 		this.setContextVariables(triggerOperation);
 	}
 	
-	public abstract void beforeInsert();
-	public abstract void beforeUpdate();
-	public abstract void beforeDelete();
+	public virtual void beforeInsert() {
+		return;
+	}
+	public virtual void beforeUpdate() {
+		return;
+	}
+	public virtual void beforeDelete() {
+		return;
+	}
 	
-	public abstract void afterInsert();
-	public abstract void afterUpdate();
-	public abstract void afterDelete();
-	public abstract void afterUndelete();
+	public virtual void afterInsert() {
+		return;
+	}
+	public virtual void afterUpdate() {
+		return;
+	}
+	public virtual void afterDelete() {
+		return;
+	}
+	public virtual void afterUndelete() {
+		return;
+	}
 	
 	private void setContextVariables(System.TriggerOperation triggerOperation){
 		switch on triggerOperation {
